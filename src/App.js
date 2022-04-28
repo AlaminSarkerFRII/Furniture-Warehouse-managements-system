@@ -1,4 +1,5 @@
 import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
@@ -7,6 +8,8 @@ import UploadProduct from "./components/UploadProduct/UploadProduct";
 import OrderList from "./components/OrderList/OrderList";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import Footer from "./components/Footer/Footer";
+import NotFound from "./components/NotFound/NotFound";
 
 function App() {
   return (
@@ -33,7 +36,10 @@ function App() {
           }
         ></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
+
+      {/* <Footer></Footer> */}
     </>
   );
 }
