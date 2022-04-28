@@ -10,6 +10,7 @@ import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Footer from "./components/Footer/Footer";
 import NotFound from "./components/NotFound/NotFound";
+import Blogs from "./components/Blogs/Blogs";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           }
         ></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
 
