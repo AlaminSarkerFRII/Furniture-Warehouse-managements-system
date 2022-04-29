@@ -15,8 +15,7 @@ const Agents = () => {
       <h2 className="text-center mb-5">Warehouse Agents{agents.length} </h2>
       <div className="row mb-5">
         {agents.map((agent) => (
-          <div className="col-lg-4 col-md-6 cl-sm-12">
-            {/* <img src={agent.img} alt="" /> */}
+          <div key={agent.id} className="col-lg-4 col-md-6 cl-sm-12">
             <Card>
               <Card.Img variant="top" src={agent.img} />
               <Card.Body className="text-center">

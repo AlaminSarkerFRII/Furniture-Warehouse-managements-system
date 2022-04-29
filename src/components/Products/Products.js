@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./Product.css";
 import { Button, Card } from "react-bootstrap";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../Firebase.initt";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
+  const [user] = useAuthState(auth);
 
   useEffect(() => {
     fetch(`http://localhost:5000/products`)
@@ -11,16 +16,41 @@ const Products = () => {
       .then((data) => setProducts(data));
   }, []);
 
+  // handle order
+
+  const handleOrder = (product) => {
+    const { name, price, image, supplier, description } = product;
+
+    // post order
+    fetch("http://localhost:5000/addOrder", {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.email,
+        name,
+        price,
+        image,
+        description,
+        supplier,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        toast(data.success);
+      });
+  };
+
   return (
     <div className="container mt-5">
       <h1 className="text-center tex-warning mb-5">
-        {" "}
         Inventory Services {products.length}
       </h1>
 
       <div className="row g-4 mb-5">
         {products.map((product) => (
-          <div className="col-lg-4 col-md-6 cols-sm-12">
+          <div key={product._id} className="col-lg-4 col-md-6 cols-sm-12">
             <Card>
               <Card.Img variant="top" src={product.image} />
               <Card.Body className="text-center">
@@ -28,14 +58,17 @@ const Products = () => {
                 <Card.Text>
                   <p>$ {product.price}</p>
                   <p className="description">{product.description}</p>
-                  <h4>{product.supplier}</h4>
+                  <p>{product.supplier}</p>
                 </Card.Text>
-                <Button variant="primary">Booking</Button>
+                <Button variant="primary" onClick={() => handleOrder(product)}>
+                  Booking
+                </Button>
               </Card.Body>
             </Card>
           </div>
         ))}
       </div>
+      <ToastContainer />
     </div>
   );
 };
