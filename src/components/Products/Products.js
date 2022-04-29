@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Product.css";
 import { Button, Card } from "react-bootstrap";
 
 const Products = () => {
@@ -12,20 +13,24 @@ const Products = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center">this is products {products.length}</h2>
+      <h1 className="text-center tex-warning mb-5">
+        {" "}
+        Inventory Services {products.length}
+      </h1>
 
       <div className="row g-4 mb-5">
         {products.map((product) => (
-          <div className="col-4">
+          <div className="col-lg-4 col-md-6 cols-sm-12">
             <Card>
               <Card.Img variant="top" src={product.image} />
-              <Card.Body>
+              <Card.Body className="text-center">
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  <p>$ {product.price}</p>
+                  <p className="description">{product.description}</p>
+                  <h4>{product.supplier}</h4>
                 </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+                <Button variant="primary">Booking</Button>
               </Card.Body>
             </Card>
           </div>

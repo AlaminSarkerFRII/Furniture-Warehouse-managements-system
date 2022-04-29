@@ -2,7 +2,7 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import { Link } from "react-router-dom";
-import auth from "../../Firebase.initt";
+import auth from "../../../Firebase.initt";
 
 const Navbar = () => {
   // check user status
@@ -36,6 +36,11 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/products">
                 Products
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/agents">
+                Agents
               </Link>
             </li>
             <li className="nav-item">
