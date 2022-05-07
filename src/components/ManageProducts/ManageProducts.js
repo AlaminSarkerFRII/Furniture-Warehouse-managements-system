@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./Product.css";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, ToastContainer } from "react-bootstrap";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../Firebase.initt";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import auth from "../../Firebase.initt";
 
-const Products = () => {
+const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
@@ -18,32 +15,9 @@ const Products = () => {
       .then((data) => setProducts(data));
   }, []);
 
-  // handle order
+  // handleToDelete Products
 
-  const handleOrder = (product) => {
-    const { _id } = product;
-
-    navigate(`/product/${_id}`);
-    // post order
-    // fetch("http://localhost:5000/addOrder", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     email: user.email,
-    //     name,
-    //     price,
-    //     image,
-    //     description,
-    //     supplier,
-    //   }),
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     toast(data.success);
-    //   });
-  };
+  const handleToDelete = () => {};
 
   return (
     <div className="container mt-5">
@@ -64,9 +38,20 @@ const Products = () => {
                   <p className="fw-bold">Quantity : {product.quantity}</p>
                   <p className="fw-bold">Supplier: {product.supplier}</p>
                 </Card.Text>
-                <Button variant="primary" onClick={() => handleOrder(product)}>
-                  Update Products
-                </Button>
+                <div>
+                  <Button
+                    variant="primary"
+                    onClick={() => handleToDelete(product)}
+                  >
+                    Delete Products
+                  </Button>
+                  <Button
+                    onClick={() => navigate("/uploadProduct")}
+                    className="mx-2"
+                  >
+                    Add Products
+                  </Button>
+                </div>
               </Card.Body>
             </Card>
           </div>
@@ -77,4 +62,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default ManageProducts;

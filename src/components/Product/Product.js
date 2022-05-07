@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./Product.css";
 import { Button, Card } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 
@@ -38,7 +39,7 @@ const Product = () => {
       .then((res) => res.json())
       .then((data) => setReload(true));
   };
-  const handleAddQuantity = (e) => {
+  const handleAddQuantity = () => {
     const url = `http://localhost:5000/product/${productId}`;
     const updatedQuantity = parseInt(product.quantity) + parseInt(addQuantity);
     fetch(url, {
@@ -53,34 +54,46 @@ const Product = () => {
       .then((res) => res.json())
       .then((data) => {
         setReload(true);
-        e.target.reset();
+        // e.target.reset();
       });
   };
 
   return (
     <div className="container">
-      <Card className="h-50 w-50 my-5">
-        <Card.Img className="p-4" variant="top" src={product.image} />
-        <Card.Body>
-          <Card.Title>{product.name} </Card.Title>
-          <Card.Text>{product.description}</Card.Text>
-          <Card.Text> Price : {product.price}</Card.Text>
-          <Card.Text> Quantity : {product.quantity}</Card.Text>
-          <Card.Text>Supplier : {product.supplier}</Card.Text>
-          <Button variant="primary" onClick={handleToUpdate}>
-            Delivered
-          </Button>
-        </Card.Body>
-      </Card>
-
-      <div className="mb-5">
-        <input
-          onChange={(e) => setAddQuantity(e.target.value)}
-          type="number"
-          placeholder="add quantity"
-          value={addQuantity}
-        />
-        <button onClick={handleAddQuantity}> Add Quantity</button>
+      <div className="row">
+        <div className="col-md-6">
+          <Card className="my-5">
+            <Card.Img className="p-4" variant="top" src={product.image} />
+            <Card.Body>
+              <Card.Title>{product.name} </Card.Title>
+              <Card.Text>{product.description}</Card.Text>
+              <Card.Text> Price : {product.price}</Card.Text>
+              <Card.Text> Quantity : {product.quantity}</Card.Text>
+              <Card.Text>Supplier : {product.supplier}</Card.Text>
+              <Button variant="primary" onClick={handleToUpdate}>
+                Delivered
+              </Button>
+            </Card.Body>
+          </Card>
+        </div>
+        <div className="col-md-6 ">
+          <div className=" mb-5 mt-5 w-100 mx-auto">
+            <input
+              className="w-50"
+              onChange={(e) => setAddQuantity(e.target.value)}
+              type="number"
+              placeholder="add quantity"
+              value={addQuantity}
+              required
+            />
+            <button className="mt-2" onClick={handleAddQuantity}>
+              Add Quantity
+            </button>
+          </div>
+          <div className="mt-5">
+            <button> Manage Products </button>
+          </div>
+        </div>
       </div>
     </div>
   );

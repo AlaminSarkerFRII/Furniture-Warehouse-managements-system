@@ -46,7 +46,7 @@ const UploadProduct = () => {
 
   return (
     <div className="container">
-      <h2 className="text-center text-info"> upload product</h2>
+      <h2 className="text-center text-info"> Add New product</h2>
       <div className="row justify-content-space-between mt-5 w-50 mx-auto">
         <div className="col-md-7">
           <form onSubmit={handleUpload}>
@@ -76,7 +76,7 @@ const UploadProduct = () => {
             </div>
             <div class="form-group">
               <input
-                type="text"
+                type="number"
                 name="price"
                 class="form-control mb-2"
                 placeholder="Price"
@@ -84,7 +84,7 @@ const UploadProduct = () => {
             </div>
             <div class="form-group">
               <input
-                type="text"
+                type="number"
                 name="quantity"
                 class="form-control mb-2"
                 placeholder="Quantity"

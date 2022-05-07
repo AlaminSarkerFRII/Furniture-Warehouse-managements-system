@@ -1,4 +1,5 @@
 import React from "react";
+import "./Navbar.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
 import { Link } from "react-router-dom";
@@ -12,8 +13,8 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          Navbar
+        <Link className="navbar-brand fw-bold" to="/">
+          Furniture Warehouse
         </Link>
         <button
           className="navbar-toggler"
@@ -43,24 +44,30 @@ const Navbar = () => {
                 Agents
               </Link>
             </li>
+            {user && (
+              <li className="nav-item">
+                <Link className="nav-link" to="/uploadProduct">
+                  Add Products
+                </Link>
+              </li>
+            )}
             <li className="nav-item">
-              <Link className="nav-link" to="/uploadProduct">
-                Upload Products
-              </Link>
+              {user && (
+                <Link className="nav-link" to="/MyItems">
+                  MyItems
+                </Link>
+              )}
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/orderlist">
-                Order List
-              </Link>
+              {user && (
+                <Link className="nav-link" to="/manageproducts">
+                  Manage Products
+                </Link>
+              )}
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/blogs">
                 Blogs
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login
               </Link>
             </li>
           </ul>
@@ -73,7 +80,11 @@ const Navbar = () => {
             </button>
           </span>
         ) : (
-          "USER"
+          <span className="btn btn-link">
+            <Link className="nav-link" to="/login">
+              Login
+            </Link>
+          </span>
         )}
       </div>
     </nav>

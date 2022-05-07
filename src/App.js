@@ -4,7 +4,7 @@ import { Route, Routes } from "react-router-dom";
 
 import Products from "./components/Products/Products";
 import UploadProduct from "./components/UploadProduct/UploadProduct";
-import OrderList from "./components/OrderList/OrderList";
+import MyItems from "./components/MyItems/MyItems";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Footer from "./components/Footer/Footer";
@@ -14,6 +14,7 @@ import Home from "./components/Home/Home/Home";
 import Navbar from "./components/Home/Navbar/Navbar";
 import Agents from "./components/Home/Agents/Agents";
 import Product from "./components/Product/Product";
+import ManageProducts from "./components/ManageProducts/ManageProducts";
 
 function App() {
   return (
@@ -41,13 +42,22 @@ function App() {
           }
         ></Route>
         <Route
-          path="/orderlist"
+          path="/manageproducts"
           element={
             <PrivateRoute>
-              <OrderList />
+              <ManageProducts />
             </PrivateRoute>
           }
         ></Route>
+        <Route
+          path="/MyItems"
+          element={
+            <PrivateRoute>
+              <MyItems />
+            </PrivateRoute>
+          }
+        ></Route>
+
         <Route path="/login" element={<Login />}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="*" element={<NotFound />}></Route>
