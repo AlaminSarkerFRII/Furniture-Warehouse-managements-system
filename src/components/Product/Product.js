@@ -12,7 +12,6 @@ const Product = () => {
 
   useEffect(() => {
     const url = `http://localhost:5000/product/${productId}`;
-
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -27,7 +26,7 @@ const Product = () => {
 
   const handleToUpdate = () => {
     const url = `http://localhost:5000/product/${productId}`;
-    const updatedQuantity = parseInt(product.quantity) - 1;
+    const updatedQuantity = parseInt(product?.quantity) - 1;
     fetch(url, {
       method: "PUT",
       body: JSON.stringify({
@@ -42,7 +41,7 @@ const Product = () => {
   };
   const handleAddQuantity = () => {
     const url = `http://localhost:5000/product/${productId}`;
-    const updatedQuantity = parseInt(product.quantity) + parseInt(addQuantity);
+    const updatedQuantity = parseInt(product?.quantity) + parseInt(addQuantity);
     fetch(url, {
       method: "PUT",
       body: JSON.stringify({

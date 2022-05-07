@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 
 import Products from "./components/Products/Products";
 import UploadProduct from "./components/UploadProduct/UploadProduct";
-import MyItems from "./components/MyItems/MyItems";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Footer from "./components/Footer/Footer";
@@ -15,6 +14,7 @@ import Navbar from "./components/Home/Navbar/Navbar";
 import Agents from "./components/Home/Agents/Agents";
 import Product from "./components/Product/Product";
 import ManageProducts from "./components/ManageProducts/ManageProducts";
+import MyItems from "./components/MyItems/MyItems";
 
 function App() {
   return (
