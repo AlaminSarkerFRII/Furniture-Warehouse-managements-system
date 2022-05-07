@@ -13,6 +13,7 @@ import Blogs from "./components/Blogs/Blogs";
 import Home from "./components/Home/Home/Home";
 import Navbar from "./components/Home/Navbar/Navbar";
 import Agents from "./components/Home/Agents/Agents";
+import Product from "./components/Product/Product";
 
 function App() {
   return (
@@ -23,6 +24,14 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/agents" element={<Agents />}></Route>
+        <Route
+          path="/product/:productId"
+          element={
+            <PrivateRoute>
+              <Product></Product>
+            </PrivateRoute>
+          }
+        ></Route>
         <Route
           path="/uploadproduct"
           element={

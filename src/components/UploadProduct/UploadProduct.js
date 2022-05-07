@@ -14,6 +14,7 @@ const UploadProduct = () => {
     const price = event.target.price.value;
     const description = event.target.description.value;
     const supplier = event.target.supplier.value;
+    const quantity = event.target.quantity.value;
     const image = event.target.image.value;
     console.log(name, price);
     // upload product
@@ -26,6 +27,7 @@ const UploadProduct = () => {
         price,
         description,
         supplier,
+        quantity,
         image,
       }),
       headers: {
@@ -82,6 +84,14 @@ const UploadProduct = () => {
             </div>
             <div class="form-group">
               <input
+                type="text"
+                name="quantity"
+                class="form-control mb-2"
+                placeholder="Quantity"
+              />
+            </div>
+            <div class="form-group">
+              <input
                 type="url"
                 name="image"
                 class="form-control mb-2"
@@ -91,7 +101,7 @@ const UploadProduct = () => {
             </div>
             <button
               type="submit"
-              class="btn btn-primary mt-2 mb-3 text-center  w-50"
+              class="btn btn-primary mt-2 mb-3 text-center  w-100"
             >
               Upload
             </button>

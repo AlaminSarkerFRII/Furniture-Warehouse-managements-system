@@ -5,10 +5,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../Firebase.initt";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:5000/products`)
@@ -19,27 +21,28 @@ const Products = () => {
   // handle order
 
   const handleOrder = (product) => {
-    const { name, price, image, supplier, description } = product;
+    const { _id } = product;
 
+    navigate(`/product/${_id}`);
     // post order
-    fetch("http://localhost:5000/addOrder", {
-      method: "POST",
-      body: JSON.stringify({
-        email: user.email,
-        name,
-        price,
-        image,
-        description,
-        supplier,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        toast(data.success);
-      });
+    // fetch("http://localhost:5000/addOrder", {
+    //   method: "POST",
+    //   body: JSON.stringify({
+    //     email: user.email,
+    //     name,
+    //     price,
+    //     image,
+    //     description,
+    //     supplier,
+    //   }),
+    //   headers: {
+    //     "Content-type": "application/json; charset=UTF-8",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => {
+    //     toast(data.success);
+    //   });
   };
 
   return (
@@ -56,12 +59,13 @@ const Products = () => {
               <Card.Body className="text-center">
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>
-                  <p>$ {product.price}</p>
+                  <p className="text-danger fw-bold ">$ {product.price}</p>
                   <p className="description">{product.description}</p>
-                  <p>{product.supplier}</p>
+                  <p>{product.quantity}</p>
+                  <p className="fw-bold">{product.supplier}</p>
                 </Card.Text>
                 <Button variant="primary" onClick={() => handleOrder(product)}>
-                  Booking
+                  Update Products
                 </Button>
               </Card.Body>
             </Card>
