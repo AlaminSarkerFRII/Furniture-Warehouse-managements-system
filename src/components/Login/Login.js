@@ -1,7 +1,8 @@
 import React from "react";
 import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../Firebase.initt";
+import login from "../../Assets/login.jpg";
 
 const Login = () => {
   // google sign in
@@ -17,7 +18,8 @@ const Login = () => {
 
   let from = location.state?.from?.pathname || "/";
 
-  const handleSignIn = () => {
+  const handleSignIn = (e) => {
+    e.preventDefault();
     signInWithGoogle();
   };
 
@@ -48,45 +50,40 @@ const Login = () => {
   return (
     <div className="container">
       <div className="row mt-5">
-        <div className="col-md-6">
+        <div className="col-md-6 mt-5">
           <form>
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
+            <div className="form-group">
               <input
                 type="email"
-                class="form-control"
+                className="form-control mb-3"
                 id="exampleInputEmail1"
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
               />
-              <small id="emailHelp" class="form-text text-muted">
-                We'll never share your email with anyone else.
-              </small>
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
+            <div className="form-group">
               <input
                 type="password"
-                class="form-control"
+                className="form-control mb-2"
                 id="exampleInputPassword1"
                 placeholder="Password"
               />
             </div>
-            <div class="form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label class="form-check-label" for="exampleCheck1">
-                Check me out
-              </label>
-            </div>
-            <button type="submit" class="btn btn-primary">
+            <button
+              type="submit"
+              className="btn btn-primary w-100 mx-auto d-block mt-3"
+            >
               Submit
             </button>
           </form>
           <br />
+
+          <div>
+            <h3>
+              Dont Have an account ?<Link to="/register"> Please Register</Link>
+            </h3>
+          </div>
+
           <div className="text-center">
             <p>Or</p>
           </div>
@@ -94,14 +91,14 @@ const Login = () => {
             <button
               onClick={handleSignIn}
               type="button"
-              class="btn btn-warning"
+              className="btn btn-warning"
             >
               Sign In With Google
             </button>
           </div>
         </div>
         <div className="col-md-6">
-          <h2>imgage will be here</h2>
+          <img className="w-75 h-100" src={login} alt="" />
         </div>
       </div>
     </div>

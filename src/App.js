@@ -15,6 +15,7 @@ import Agents from "./components/Home/Agents/Agents";
 import Product from "./components/Product/Product";
 import ManageProducts from "./components/ManageProducts/ManageProducts";
 import MyItems from "./components/MyItems/MyItems";
+import Register from "./components/Login/Register/Register";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/products" element={<Products />}></Route>
         <Route path="/agents" element={<Agents />}></Route>
+        <Route path="/register" element={<Register />}></Route>
         <Route
           path="/product/:productId"
           element={
@@ -57,7 +59,6 @@ function App() {
             </PrivateRoute>
           }
         ></Route>
-
         <Route path="/login" element={<Login />}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="*" element={<NotFound />}></Route>
