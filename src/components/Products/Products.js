@@ -25,24 +25,24 @@ const Products = () => {
 
     navigate(`/product/${_id}`);
     // post order
-    // fetch("http://localhost:5000/addOrder", {
-    //   method: "POST",
-    //   body: JSON.stringify({
-    //     email: user.email,
-    //     name,
-    //     price,
-    //     image,
-    //     description,
-    //     supplier,
-    //   }),
-    //   headers: {
-    //     "Content-type": "application/json; charset=UTF-8",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     toast(data.success);
-    //   });
+    fetch("http://localhost:5000/MyItems", {
+      method: "POST",
+      body: JSON.stringify({
+        email: user.email,
+        // name,
+        // price,
+        // image,
+        // description,
+        // supplier,
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        toast(data.success);
+      });
   };
 
   return (
@@ -52,7 +52,7 @@ const Products = () => {
       </h1>
 
       <div className="row g-4 mb-5">
-        {products.map((product) => (
+        {products.slice(0, 6).map((product) => (
           <div key={product._id} className="col-lg-4 col-md-6 cols-sm-12">
             <Card>
               <Card.Img variant="top" src={product.image} />

@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./Product.css";
 import { Button, Card } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Product = () => {
   const { productId } = useParams();
   const [product, setProduct] = useState({});
   const [addQuantity, setAddQuantity] = useState("");
   const [reload, setReload] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const url = `http://localhost:5000/product/${productId}`;
@@ -91,7 +92,12 @@ const Product = () => {
             </button>
           </div>
           <div className="mt-5">
-            <button> Manage Products </button>
+            <button
+              onClick={() => navigate("/manageproducts")}
+              className="btn btn-danger"
+            >
+              Manage Products
+            </button>
           </div>
         </div>
       </div>
