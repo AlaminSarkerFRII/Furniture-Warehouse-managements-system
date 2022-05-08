@@ -27,7 +27,7 @@ const Login = () => {
 
   if (user) {
     //user login korle token pabe
-    const url = "http://localhost:5000/login";
+    const url = "https://agile-river-34776.herokuapp.com/login";
 
     fetch(url, {
       method: "POST",

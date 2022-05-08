@@ -17,7 +17,7 @@ const UploadProduct = () => {
     const image = event.target.image.value;
     console.log(name, price);
     // upload product
-    const url = "http://localhost:5000/uploadproduct";
+    const url = "https://agile-river-34776.herokuapp.com/uploadproduct";
 
     fetch(url, {
       method: "POST",

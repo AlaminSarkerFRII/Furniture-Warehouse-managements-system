@@ -13,7 +13,7 @@ const Products = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products`)
+    fetch(`https://agile-river-34776.herokuapp.com/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -25,7 +25,7 @@ const Products = () => {
 
     navigate(`/product/${_id}`);
     // post order
-    fetch("http://localhost:5000/MyItems", {
+    fetch("https://agile-river-34776.herokuapp.com/MyItems", {
       method: "POST",
       body: JSON.stringify({
         email: user.email,

@@ -1,20 +1,20 @@
 [
     {
         "id":1,
-        "name":"Jons",
+        "name":"Jons bon",
         "says":"The Best Buying and Selling Systems and Equipement Here .",
-        "img":"https://i.ibb.co/v47p18g/pexels-fauxels-3228895.jpg"
+        "img":"https://i.ibb.co/rZ2RdL8/pexels-mart-production-7709155.jpg"
     },
     {
         "id":2,
-        "name":"Hexels",
-        "says":"The Best Buying and Selling Systems and Equipement Here .",
-        "img":" https://i.ibb.co/PYj4HZ3/pexels-nicholas-swatz-2770600.jpg "
+        "name":"Hexels Kit",
+        "says":"The Best Buying and Selling Systems and Equipement Here.",
+        "img":"https://i.ibb.co/y0ZR22M/pexels-pavel-danilyuk-7658358.jpg"
     },
     {
         "id":3,
         "name":"ALEX COOK",
-        "says":"The Best Buying and Selling Systems and Equipement Here .",
-        "img":" https://i.ibb.co/MpmQ75w/pexels-atef-khaled-1816642.jpg"
+        "says":"The Best Buying and Selling Systems and Equipement Here.",
+        "img":"https://i.ibb.co/Tt3LmZP/pexels-mart-production-7709243.jpg"
     }
 ]

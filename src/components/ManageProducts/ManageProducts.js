@@ -12,7 +12,7 @@ const ManageProducts = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products`)
+    fetch(`https://agile-river-34776.herokuapp.com/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -24,7 +24,7 @@ const ManageProducts = () => {
 
     if (confirmToDeletion) {
       console.log("deleting", id);
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://agile-river-34776.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })

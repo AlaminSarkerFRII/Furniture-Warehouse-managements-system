@@ -14,7 +14,7 @@ const MyItems = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = `http://localhost:5000/Myitem`;
+    const url = `https://agile-river-34776.herokuapp.com/Myitem`;
     fetch(url, {
       headers: {
         //take email and token
@@ -26,7 +26,7 @@ const MyItems = () => {
   }, [user.email]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/products`)
+    fetch(`https://agile-river-34776.herokuapp.com/products`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);
@@ -40,7 +40,7 @@ const MyItems = () => {
 
     if (confirmToDeletion) {
       console.log("deleting", id);
-      const url = `http://localhost:5000/product/${id}`;
+      const url = `https://agile-river-34776.herokuapp.com/product/${id}`;
       fetch(url, {
         method: "DELETE",
       })

@@ -11,7 +11,7 @@ const Product = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const url = `http://localhost:5000/product/${productId}`;
+    const url = `https://agile-river-34776.herokuapp.com/product/${productId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -25,7 +25,7 @@ const Product = () => {
   // update quantity
 
   const handleToUpdate = () => {
-    const url = `http://localhost:5000/product/${productId}`;
+    const url = `https://agile-river-34776.herokuapp.com/product/${productId}`;
     const updatedQuantity = parseInt(product?.quantity) - 1;
     fetch(url, {
       method: "PUT",
@@ -40,7 +40,7 @@ const Product = () => {
       .then((data) => setReload(true));
   };
   const handleAddQuantity = () => {
-    const url = `http://localhost:5000/product/${productId}`;
+    const url = `https://agile-river-34776.herokuapp.com/product/${productId}`;
     const updatedQuantity = parseInt(product?.quantity) + parseInt(addQuantity);
     fetch(url, {
       method: "PUT",
