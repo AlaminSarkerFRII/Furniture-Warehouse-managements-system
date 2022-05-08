@@ -53,7 +53,7 @@ const Products = () => {
 
       <div className="row g-4 mb-5">
         {products.slice(0, 6).map((product) => (
-          <div key={product._id} className="col-lg-4 col-md-6 cols-sm-12">
+          <div key={product._id} className="col-lg-4 col-md-6 col-sm-12">
             <Card>
               <Card.Img variant="top" src={product.image} />
               <Card.Body className="text-center">

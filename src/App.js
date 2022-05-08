@@ -6,7 +6,7 @@ import Products from "./components/Products/Products";
 import UploadProduct from "./components/UploadProduct/UploadProduct";
 import Login from "./components/Login/Login";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
-import Footer from "./components/Footer/Footer";
+
 import NotFound from "./components/NotFound/NotFound";
 import Blogs from "./components/Blogs/Blogs";
 import Home from "./components/Home/Home/Home";
@@ -16,6 +16,7 @@ import Product from "./components/Product/Product";
 import ManageProducts from "./components/ManageProducts/ManageProducts";
 import MyItems from "./components/MyItems/MyItems";
 import Register from "./components/Login/Register/Register";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -63,8 +64,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
-
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </>
   );
 }

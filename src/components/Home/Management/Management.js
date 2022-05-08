@@ -5,7 +5,7 @@ const Management = () => {
   return (
     <div className="container">
       <div className="row d-flex justify-content-around align-items-center">
-        <div className="col-md-6">
+        <div className="col-md-6 col-sm-12">
           <h1>Order Management</h1>
           <p className="fs-5">
             Simplify order management with auto reorder points, in-depth
@@ -15,8 +15,8 @@ const Management = () => {
             shipments, control order statuses, and more.
           </p>
         </div>
-        <div className="col-md-6">
-          <img src={orderImag} alt="" />
+        <div className="col-md-6 col-sm-12">
+          <img className="w-75" src={orderImag} alt="" />
         </div>
       </div>
     </div>
