@@ -4,11 +4,11 @@ import { RiFacebookCircleFill } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
 import { GrLinkedin } from "react-icons/gr";
 import { AiFillGithub } from "react-icons/ai";
-// import "./Footer.css";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div className="text-center text-white bg-dark">
+    <div id="footer" className="text-center text-white bg-dark">
       <div className="container pt-4">
         {/* <!-- Section: Social media --> */}
         <section className="mb-4">
