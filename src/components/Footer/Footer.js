@@ -8,51 +8,113 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div id="footer" className="text-center text-white bg-dark">
-      <div className="container pt-4">
-        {/* <!-- Section: Social media --> */}
-        <section className="mb-4">
-          <Link
-            className="btn btn-link btn-floating btn-lg text-white m-1 fs-2"
-            to="/home"
-            data-mdb-ripple-color="white"
-          >
-            <RiFacebookCircleFill />
-          </Link>
-          <Link
-            className="btn btn-link btn-floating btn-lg text-white m-1 fs-2"
-            to="/home"
-            data-mdb-ripple-color="white"
-          >
-            <FcGoogle />
-          </Link>
+    <footer class="text-center text-lg-start bg-dark text-white mt-10">
+      <section
+        class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
+      >
+        <div class="me-5 d-none d-lg-block">
+          <span>Get connected with us on social networks:</span>
+        </div>
+        <div>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+      </section>
+    
 
-          <Link
-            className="btn btn-link btn-floating btn-lg text-white m-1 fs-2"
-            to="/home"
-            data-mdb-ripple-color="white"
-          >
-            <GrLinkedin></GrLinkedin>
-          </Link>
-          <Link
-            className="btn btn-link btn-floating btn-lg text-white m-1 fs-2"
-            to="/home"
-            data-mdb-ripple-color="white"
-          >
-            <AiFillGithub />
-          </Link>
-          <div
-            className="text-center p-3 "
-            // style="background-color: rgba(0, 0, 0, 0.2);"
-          >
-            © 2022 Copyright:
-            <Link className="text-white fs-2 px-3" to="/">
-              Furniture Warehouse
-            </Link>
+      <section class="">
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                <i class="fas fa-gem me-3"></i>Furniture Warehouse
+              </h6>
+              <p>
+              Furniture Warehouse is priced from $5.95 to $7.95, which means everything can be ordered for less than an astonishingly low $8!
+              </p>
+            </div>
+            {/* <!-- Grid column -->
+    
+            <!-- Grid column --> */}
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Products
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Angular</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">React</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Vue</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Laravel</a>
+              </p>
+            </div>
+            {/* <!-- Grid column -->
+    
+            <!-- Grid column --> */}
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Useful links
+              </h6>
+              <p>
+                <a href="#!" class="text-reset">Pricing</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Settings</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Orders</a>
+              </p>
+              <p>
+                <a href="#!" class="text-reset">Help</a>
+              </p>
+            </div>
+            {/* <!-- Grid column -->
+    
+            <!-- Grid column --> */}
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">
+                Contact
+              </h6>
+              <p><i class="fas fa-home me-3"></i> Mohammadpur,Dhaka-1207, Bangladesh </p>
+              <p>
+                <i class="fas fa-envelope me-3"></i>
+                alamin.sarker4241@gmail.com
+              </p>
+              <p><i class="fas fa-phone me-3"></i> +880 1842414809</p>
+              <p><i class="fas fa-print me-3"></i> +880 1740051568</p>
+            </div>
+
           </div>
-        </section>
+
+        </div>
+      </section>
+
+      <div class="text-center p-4">
+        © 2022 Copyright:
+        <a class="text-reset fw-bold" href="https://www.linkedin.com/feed/">Alamin Sarker</a>
       </div>
-    </div>
+    </footer>
   );
 };
 

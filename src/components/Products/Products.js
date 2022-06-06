@@ -46,21 +46,21 @@ const Products = () => {
   };
 
   return (
-    <div className="container mt-5">
+    <div className="container pt-5">
       <h1 className="text-center tex-warning mb-5">
         Inventory Services {products.length}
       </h1>
 
       <div className="row g-4 mb-5">
-        {products.slice(0, 6).map((product) => (
-          <div key={product._id} className="col-lg-4 col-md-6 col-sm-12">
-            <Card>
-              <Card.Img variant="top" src={product.image} />
+        {products.slice(0, 3).map((product) => (
+          <div key={product._id} gap={3} className="col-lg-4 col-md-6 col-sm-12 shadow-lg">
+            <Card  className="h-25 mx-auto" style={{ width: '18rem' }}>
+              <Card.Img variant="top" className="w-full" src={product.image} />
               <Card.Body className="text-center">
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>
                   <p className="text-danger fw-bold ">$ {product.price}</p>
-                  <p className="description">{product.description}</p>
+                  <p className="description">{product.description.slice(0,100)}</p>
                   <p className="fw-bold">Quantity : {product.quantity}</p>
                   <p className="fw-bold">Supplier: {product.supplier}</p>
                 </Card.Text>

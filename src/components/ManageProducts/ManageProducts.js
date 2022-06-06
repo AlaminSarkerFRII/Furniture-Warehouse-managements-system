@@ -43,19 +43,19 @@ const ManageProducts = () => {
   return (
     <div className="container mt-5">
       <h1 className="text-center tex-warning mb-5">
-        Warehouse Inventory Services
+       Manage Warehouse Inventory Services
       </h1>
 
       <div className="row g-4 mb-5">
         {products.map((product) => (
           <div key={product._id} className="col-lg-4 col-md-6 cols-sm-12">
-            <Card>
+            <Card className="card">
               <Card.Img variant="top" src={product.image} />
               <Card.Body className="text-center">
                 <Card.Title>{product.name}</Card.Title>
                 <Card.Text>
                   <p className="text-danger fw-bold ">$ {product.price}</p>
-                  <p className="description">{product.description}</p>
+                  <p className="description">{product.description.slice(0,200)}</p>
                   <p className="fw-bold">Quantity : {product.quantity}</p>
                   <p className="fw-bold">Supplier: {product.supplier}</p>
                 </Card.Text>

@@ -3,7 +3,7 @@ import orderImag from "../../../Assets/order-manage.png";
 
 const Management = () => {
   return (
-    <div className="container">
+    <div className="container mt-5 mb-3">
       <div className="row d-flex justify-content-around align-items-center">
         <div className="col-md-6 col-sm-12">
           <h1>Order Management</h1>
